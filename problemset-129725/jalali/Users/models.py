@@ -1,6 +1,17 @@
 from django.db import models
 from django_jalali.db import models as jmodels
 import jdatetime
+from django.core.validators import RegexValidator
+
+FullNameValidator = RegexValidator(
+    regex=r'^[A-Z][a-zA-Z]{3,} [A-Z][a-zA-Z]{3,}$',
+    message='Full name is not correct.',
+)
+
+NationalCodeValidator = RegexValidator(
+    regex=r'^\d{10}$',
+    message='National Code must be 10 characters.'
+)
 
 
 class CustomUser(models.Model):
@@ -9,9 +20,9 @@ class CustomUser(models.Model):
         FEMALE = 'F', 'Female'
 
     username = models.CharField(max_length=256)
-    full_name = models.CharField(max_length=256)
+    full_name = models.CharField(max_length=256, validators=[FullNameValidator])
     gender = models.CharField(max_length=1, choices=Gender.choices)
-    national_code = models.CharField(max_length=10)
+    national_code = models.CharField(max_length=10, validators=[NationalCodeValidator])
     birthday_date = jmodels.jDateField()
     ceremony_datetime = jmodels.jDateTimeField()
     country = models.CharField(max_length=4, default='Iran', editable=False)
@@ -31,4 +42,3 @@ class CustomUser(models.Model):
     def is_birthday(self):
         today = jdatetime.date.today()
         return today.month == self.birthday_date.month and today.day == self.birthday_date.day
-
