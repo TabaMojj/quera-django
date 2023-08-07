@@ -7,14 +7,6 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-def add_user_to_existing_data(apps, schema_editor):
-    Article = apps.get_model('blog', 'Article')
-    for article in Article.objects.all():
-        user = User.objects.get(username=article.author)
-        article.author = user.id
-        article.save()
-
-
 def add_category_to_existing_data(apps, schema_editor):
     Article = apps.get_model('blog', 'Article')
     Category = apps.get_model('blog', 'Category')
@@ -54,38 +46,41 @@ class Migration(migrations.Migration):
                 ('status', models.BooleanField(default=True)),
             ],
         ),
+        migrations.RunPython(add_category_to_existing_data),
+
         migrations.AddField(
             model_name='article',
             name='published',
             field=models.DateTimeField(default=django.utils.timezone.now),
         ),
+        migrations.RunPython(add_published_to_existing_data),
+
         migrations.AddField(
             model_name='article',
             name='status',
             field=models.CharField(choices=[('d', 'draft'), ('p', 'publish')], default='d', max_length=1),
         ),
+        migrations.RunPython(add_status_to_existing_data),
+
         migrations.AddField(
             model_name='article',
             name='updated',
             field=models.DateTimeField(null=True, auto_now=True,),
         ),
-        migrations.RunPython(add_user_to_existing_data),
+        migrations.RunPython(add_updated_to_existing_data),
+
         migrations.AlterField(
             model_name='article',
             name='author',
             field=models.ForeignKey(db_column='author', on_delete=django.db.models.deletion.CASCADE,
-                                    related_name='articles', to=settings.AUTH_USER_MODEL),
+                                    related_name='articles', to=settings.AUTH_USER_MODEL, to_field='username'),
         ),
-        migrations.RunPython(add_category_to_existing_data),
+
         migrations.AlterField(
             model_name='article',
             name='category',
             field=models.ForeignKey(db_column='category', null=True, on_delete=django.db.models.deletion.SET_NULL,
                                     related_name='articles', to='blog.category'),
         ),
-
-        migrations.RunPython(add_published_to_existing_data),
-        migrations.RunPython(add_status_to_existing_data),
-        migrations.RunPython(add_updated_to_existing_data),
 
     ]
