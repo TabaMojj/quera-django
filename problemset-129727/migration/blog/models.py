@@ -13,7 +13,7 @@ class Article(models.Model):
         DRAFT = 'd', 'draft'
         PUBLISH = 'p', 'publish'
 
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='articles', on_delete=models.CASCADE, db_column='author')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='articles', on_delete=models.CASCADE, db_column='author', to_field='username')
     title = models.CharField(max_length=100)
     category = models.ForeignKey(Category,  related_name='articles', null=True, on_delete=models.SET_NULL, db_column='category')
     body = models.TextField()
