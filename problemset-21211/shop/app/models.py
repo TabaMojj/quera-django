@@ -8,6 +8,11 @@ class Category(models.Model):
         return self.name
 
 
+class AvailableProduct(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(stock__gte=1)
+
+
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
@@ -16,6 +21,9 @@ class Product(models.Model):
     stock = models.PositiveIntegerField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    objects = models.Manager()
+    available = AvailableProduct()
 
     def __str__(self):
         return self.name
