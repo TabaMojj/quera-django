@@ -27,13 +27,12 @@ class BlockedIp(models.Model):
 
     @property
     def is_blocked(self):
-        # Your code
-        pass
+        elapsed = (timezone.now() - self.created_at).total_seconds()
+        return elapsed < self.ban_time
 
     @staticmethod
     def is_ip_blocked(ip):
-        # Your code
-        pass
+        return BlockedIp.objects.filter(ip=ip).exists()
 
     def __str__(self):
         return f'ip: {self.ip} rps: {self.rps}'
