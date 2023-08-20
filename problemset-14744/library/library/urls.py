@@ -14,7 +14,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app import views
+
 
 urlpatterns = [
+    path('get_book_users/<int:book_id>/', views.get_book_users),
+    path('borrow_book/<int:book_id>/<str:user_name>/', views.borrow_book),
+    path('return_book/<int:book_id>/', views.return_book),
     path('admin/', admin.site.urls),
 ]
