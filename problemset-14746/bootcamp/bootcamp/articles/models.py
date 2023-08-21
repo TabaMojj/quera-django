@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.models import User
 from django.db import models
-from autoslug import AutoSlugField
+# from autoslug import AutoSlugField
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Count
@@ -21,7 +21,7 @@ class Article(models.Model):
     )
 
     title = models.CharField(max_length=255, null=False, unique=True)
-    slug = AutoSlugField(populate_from='title')
+    # slug = AutoSlugField(populate_from='title')
     tags = TaggableManager()
     content = models.TextField(max_length=4000)
     status = models.CharField(max_length=1, choices=STATUS, default=DRAFT)
