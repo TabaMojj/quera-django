@@ -141,3 +141,10 @@ class Answer(models.Model):
 
     def get_description_as_markdown(self):
         return markdown.markdown(self.description, safe_mode='escape')
+
+
+class Comment(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
+    create_date = models.DateTimeField(auto_now_add=True, null=True)
