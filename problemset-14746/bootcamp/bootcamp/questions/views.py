@@ -1,16 +1,19 @@
+import json
+
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView
 from django.db.models import Q
-from django.http import HttpResponse, HttpResponseForbidden
+from django.http import HttpResponse, HttpResponseForbidden, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, redirect, render
 from django.core.urlresolvers import reverse_lazy
 
 from bootcamp.activities.models import Activity
 from bootcamp.decorators import ajax_required
 from bootcamp.questions.forms import AnswerForm, QuestionForm
-from bootcamp.questions.models import Answer, Question
+from bootcamp.questions.models import Answer, Question, Comment
 
 
 @login_required
@@ -70,9 +73,11 @@ def all(request):
 @login_required
 def question(request, pk):
     question = get_object_or_404(Question, pk=pk)
+    comments = question.comments.all()
     form = AnswerForm(initial={'question': question})
     return render(request, 'questions/question.html', {
         'question': question,
+        'comments': comments,
         'form': form
     })
 
@@ -184,3 +189,27 @@ def favorite(request):
         user.profile.notify_favorited(question)
 
     return HttpResponse(question.calculate_favorites())
+
+
+@login_required
+@ajax_required
+def comment(request):
+    if request.method != 'POST':
+        return HttpResponse(json.dumps({'status': 3}), content_type="application/json")
+
+    question_id = request.POST.get('question')
+    comment_text = request.POST.get('comment')
+    if question_id is None:
+        return HttpResponseBadRequest('`question` not available in request.')
+    if comment_text is None:
+        return HttpResponseBadRequest('`comment` not available in request.')
+
+    if not comment_text or comment_text.isspace():
+        return HttpResponse(json.dumps({'status': 1}), content_type="application/json")
+
+    question_object = Question.objects.filter(id=question_id)
+    if not question_object.exists():
+        return HttpResponse(json.dumps({'status': 2}), content_type="application/json")
+    user = User.objects.get(username=request.user.username)
+    Comment.objects.create(question=question_object.get(), user=user, text=comment_text)
+    return HttpResponse(json.dumps({'status': 0}), content_type="application/json")
