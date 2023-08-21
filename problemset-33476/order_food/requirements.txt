@@ -1,0 +1,4 @@
+django==4.0.5
+django-contrib-comments==2.2.0
+beautifulsoup4==4.11.1
+
