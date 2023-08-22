@@ -1,0 +1,855 @@
+{
+	"info": {
+		"_postman_id": "a13d5076-a30a-4b61-b8e5-27cd76b5c3d1",
+		"name": "BookStore Quera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get all books - No user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/books/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "E.g.  (get all books -no user)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/books/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"books",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Jul 2022 08:57:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11852"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"isbn\": \"978-1-4061-9242-1\",\n        \"title\": \"Energy carry different lot. Back room practice with.\",\n        \"content\": \"Suddenly various answer author.\\nAvoid physical half something computer. According need join everybody measure hand cost. None rock I sea.\\nThem fear join above property major.\\nListen Democrat prevent exactly property relationship exist. Message national dream phone event Democrat structure.\\nBuy nation center minute reality. Night recognize since.\\nYard military mind population treat. Return dream begin work enough.\\nRemember leader future answer where growth. Political usually collection social institution major under travel. Bed every door movement name similar action.\\nExpert bill police decade rather need indeed never. Region Mr garden since.\\nFall meeting way beyond. Issue compare kind mouth.\\nOk player team front. Discuss candidate thus degree his for game factor.\\nOur let campaign theory response project hear.\\nPractice start reach. Size attention game sure back modern. Ready prevent soldier capital employee laugh. World series life cultural though.\\nTalk learn space popular voice.\",\n        \"price\": \"7346.00\",\n        \"authors\": [\n            1,\n            2\n        ],\n        \"categories\": [\n            \"http://127.0.0.1:8000/category/2/\"\n        ],\n        \"price_after_discount\": 4407.6\n    },\n    {\n        \"id\": 2,\n        \"isbn\": \"978-1-348-46664-2\",\n        \"title\": \"Speak list manage. Work so scene range PM. Agent data wind though.\",\n        \"content\": \"Role describe position. Catch conference drop smile item. Professional could whose approach development personal knowledge.\\nTask or animal course rest ago election. Report deal case day management strategy.\\nClear it military paper factor second. Some reflect whom eight industry food film.\\nBeyond production beautiful particularly physical. Far support sometimes performance. Brother plant floor court check.\\nKnow give foreign. Foreign resource author thank want property.\\nAsk without within public. Suffer image certainly admit claim television institution. Blue vote such town.\\nMy save near. News reflect entire modern ability.\\nTo old parent hear game impact everything big. Next three religious page. Prevent stay important economy source.\\nPartner decade base once coach though miss. Minute ability however above generation truth high mean.\\nPretty international to TV responsibility it. Recent certain left available. Election game laugh continue.\",\n        \"price\": \"6924.00\",\n        \"authors\": [\n            1,\n            2\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 5539.2\n    },\n    {\n        \"id\": 3,\n        \"isbn\": \"978-0-9672049-2-5\",\n        \"title\": \"Prevent individual lead represent whatever.\",\n        \"content\": \"Indeed beat everybody available. Fall way fire of.\\nSuccess else data protect hour then someone day. Trouble free rich thank assume office. American matter message a door sell bring.\\nBest act response side two. Knowledge price least determine town build. Feel side successful key wear town method.\\nWear summer short military our especially. Past performance letter bed century you happen.\\nWant reveal determine arrive Republican.\\nHigh manager we front. Within get season behind song consider. Win interesting player baby more.\\nSell like difficult shoulder. Guess education run color successful. Stage we yourself American far above.\\nWithin story could message sound long get. Popular but phone door including green allow available. Wide listen kitchen get.\\nLittle agent thought discussion now blood push. Than catch base Congress. Either nearly future three life star style.\\nVarious raise once finally.\\nOrder evening movement firm or ten.\",\n        \"price\": \"4551.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 3640.8\n    },\n    {\n        \"id\": 4,\n        \"isbn\": \"978-1-264-21392-4\",\n        \"title\": \"Establish lose do from evidence population theory fast. Full could board up technology dog market.\",\n        \"content\": \"Seem article alone news onto me. Couple picture hotel build live instead learn. Instead his international later mention.\\nWindow officer design support. Decision determine program teach. Community daughter first service poor against prevent team.\\nMiddle million impact cup keep practice accept. Report federal specific particular music enough four. Month professional mind page institution director audience. Hotel radio student recognize live.\\nPower challenge seek might window. Today yes pull top president wide senior.\\nCapital reduce himself box air low. Blue beat various official night carry.\\nEight area example computer improve newspaper. Ball likely brother suddenly. Kitchen remember catch stop.\\nHome over role blood person. Everything husband probably expect spring five soldier. Must knowledge even institution while low. Mouth property option Democrat TV thousand.\\nFight energy research. House pull lay. Perhaps fly cut chair task.\",\n        \"price\": \"7010.00\",\n        \"authors\": [\n            1,\n            2\n        ],\n        \"categories\": [\n            \"http://127.0.0.1:8000/category/1/\"\n        ],\n        \"price_after_discount\": 5608\n    },\n    {\n        \"id\": 5,\n        \"isbn\": \"978-1-62010-463-7\",\n        \"title\": \"Happen end public moment. We heart appear large.\",\n        \"content\": \"Decision share method air but leave. Series social little face because choice.\\nPaper call us order. Well sea series myself.\\nCold at long peace race animal guess film.\\nSenior nothing right popular throw sport family. Base sometimes prepare hand deep.\\nClearly dark enough significant yourself provide. Bank beyond choice identify court.\\nCulture man shoulder but generation laugh various write. Leave attorney second who south deep agreement purpose.\\nStar forward political type somebody town. Energy mother one enough manager. Before wide past.\\nEvidence claim teach central blood she region. Difficult world open specific unit day suffer art. Follow interesting who fact end across.\\nBoard area discussion material evening. Miss where able require fish subject. Once yard century interest positive this network send.\\nSafe truth light hand business. Training phone gas option value law read take.\",\n        \"price\": \"7525.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 6020\n    },\n    {\n        \"id\": 6,\n        \"isbn\": \"978-1-340-98384-0\",\n        \"title\": \"Join discuss near interesting another consider. Democrat mission join administration this.\",\n        \"content\": \"Production our write there that. And human true over less have glass fine. Conference paper apply ball he window yeah resource.\\nAmerican focus job consumer main. Citizen big bank as difficult.\\nBody art put when. Sort image ask commercial poor special. Which beyond natural number.\\nBit bit sell or. Reach set few account two sea cause. Every amount wish together decade. Mother table by two foot fact final.\\nShoulder compare at big hear. Media deal look above there Democrat building. Attention view him next fear respond dog control. For event half.\\nGame teacher candidate voice person bed heart field. Upon rather top process evidence.\\nGeneration hit minute whatever staff oil radio offer. High role bank maybe data understand could. Improve explain bag truth mind tell seven option.\\nTeach wind process president. Organization unit carry operation. Customer tax eight science.\\nCut summer feel population base good generation.\",\n        \"price\": \"3459.00\",\n        \"authors\": [\n            2\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 3459\n    },\n    {\n        \"id\": 7,\n        \"isbn\": \"978-1-55451-601-8\",\n        \"title\": \"Upon to military off responsibility company talk military.\",\n        \"content\": \"Less school right. Learn everything would until. History two treat why ask.\\nPrevent catch reach single tree even practice. Forward simply ask property lay. Drop traditional gun professor.\\nBe yet certain young. Throw a left generation within their they. Author imagine market.\\nDespite leader leader perhaps your not. Article should high police. Strong what push hundred Democrat travel film.\\nLeader read box since question dinner quite. Area fly attorney reach his like media.\\nRight site exist fast several modern line. Road new last serve condition three language.\\nAdministration manager civil exactly attack be. Just card myself lead fish.\\nMight expect agency seven citizen. Oil wear language meeting.\\nEnough already environment owner. Of since face for. Money represent whole into price production able.\\nParty Republican because involve near feeling time. Control expect show. Professional avoid yard walk friend close hair.\\nEasy attorney bar movie. Quality practice like spring eat.\",\n        \"price\": \"1749.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 1399.2\n    },\n    {\n        \"id\": 8,\n        \"isbn\": \"978-1-7356944-1-2\",\n        \"title\": \"Thought man work help choose program listen. Course hospital Congress despite throughout forward.\",\n        \"content\": \"Control authority various simply face work. Daughter arrive response light oil.\\nWrite work performance year. But admit theory beat matter behavior. Respond direction artist important push financial college.\\nEntire light capital tend about employee issue. Case sing end next person wall woman.\\nWestern energy beyond machine wall. To should dream.\\nSafe court person if explain accept particularly. Simple state sister oil why report method.\\nWrong have cause although and light wide. Feel across natural paper sound room. Them second low prepare thus image customer job.\\nPosition several degree great do different. Million what hour. Central century later. Minute note relate together.\\nEdge head land employee. Rise summer again artist.\\nToward page model focus up while. Exactly because nor any provide forward machine. Question understand strong relate. Human record although offer that resource.\\nFast travel provide energy more trial several you. Last too then form increase former.\",\n        \"price\": \"9268.00\",\n        \"authors\": [\n            1,\n            2\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 7414.4\n    },\n    {\n        \"id\": 9,\n        \"isbn\": \"978-0-07-491220-1\",\n        \"title\": \"Democrat man officer artist bad. New sell off sense. Task stand west.\",\n        \"content\": \"Practice dream human require. Suggest customer open financial agency.\\nRole five majority couple only not hard. Father best possible quickly early final.\\nGreen quickly individual present mention. Last force day food feeling.\\nHim word effect force democratic time. Me law day trouble computer prevent. Entire southern yet.\\nPainting rather nothing consumer clear leg specific.\\nTrue international company improve. My air military couple general. Role most spring nation around offer write.\\nHere market wall everybody book. Southern guy suffer.\\nStudent social prepare sort under great. Dream test say peace various treat special.\\nWithin put dog attorney best loss. Serve bad drive main poor. Military than tell understand model. Suddenly able today director that different rule.\\nPick require difference middle usually east performance. Wish system finally information care.\\nHit exist them pick event travel beautiful. Four window cell represent focus your trial. Radio the west one recently hospital.\",\n        \"price\": \"6095.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [\n            \"http://127.0.0.1:8000/category/2/\"\n        ],\n        \"price_after_discount\": 4876\n    },\n    {\n        \"id\": 10,\n        \"isbn\": \"978-0-05-676390-6\",\n        \"title\": \"International manage parent break whether beautiful example. Floor field against none indicate.\",\n        \"content\": \"Use represent hear start. Rate feel medical yes. Address teacher clear model including.\\nGreat stock federal start like speak because.\\nTeam politics conference have six quality cell. Return them sell prepare rise decade. Society her set ability against election evidence.\\nThroughout through trouble style sea. Country standard nation your book civil. Direction peace even war.\\nMeasure smile offer boy. Instead tend white bank either newspaper huge lose.\\nPart world ago modern present matter game. Particular let two hear strong into. Method art PM.\\nDaughter control program campaign. Focus eat field score. Economic pressure teach police guy bag difficult.\\nBeat teach weight effect decision although themselves. Too maybe picture among partner bag. Allow party bring similar Mrs yourself. Type himself mouth scene.\\nNight get serious. Point blood pattern dark make large. Member director someone sign campaign gas. Property he indeed allow write area.\",\n        \"price\": \"5953.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 4762.4\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get all books - With user",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var BASE_URL = pm.collectionVariables.get(\"BASE_URL\");",
+									"var USERNAME = \"farhad\"",
+									"var PASSWORD = \"hellopass\"",
+									"",
+									"",
+									"const echoPostRequest = {",
+									"  url: BASE_URL+'/accounts/login/',",
+									"  method: 'POST',",
+									"  header: 'Content-Type:application/json',",
+									"  body: {",
+									"    mode: 'application/json',",
+									"    raw: JSON.stringify(",
+									"        {",
+									"        \tusername:USERNAME,",
+									"        \tpassword:PASSWORD,",
+									"        })",
+									"  }",
+									"};",
+									"",
+									"",
+									"pm.sendRequest(echoPostRequest, function (err, res) {",
+									"console.log(err ? err : res.json());",
+									"    if (err === null) {",
+									"        var responseJson = res.json();",
+									"        pm.collectionVariables.set('USER_TOKEN', 'Token ' + responseJson.token);",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_TOKEN}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/books/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "E.g. (get all books - with user)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{USER_TOKEN}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/books/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"books",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Jul 2022 09:03:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11851"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"isbn\": \"978-1-4061-9242-1\",\n        \"title\": \"Energy carry different lot. Back room practice with.\",\n        \"content\": \"Suddenly various answer author.\\nAvoid physical half something computer. According need join everybody measure hand cost. None rock I sea.\\nThem fear join above property major.\\nListen Democrat prevent exactly property relationship exist. Message national dream phone event Democrat structure.\\nBuy nation center minute reality. Night recognize since.\\nYard military mind population treat. Return dream begin work enough.\\nRemember leader future answer where growth. Political usually collection social institution major under travel. Bed every door movement name similar action.\\nExpert bill police decade rather need indeed never. Region Mr garden since.\\nFall meeting way beyond. Issue compare kind mouth.\\nOk player team front. Discuss candidate thus degree his for game factor.\\nOur let campaign theory response project hear.\\nPractice start reach. Size attention game sure back modern. Ready prevent soldier capital employee laugh. World series life cultural though.\\nTalk learn space popular voice.\",\n        \"price\": \"7346.00\",\n        \"authors\": [\n            1,\n            2\n        ],\n        \"categories\": [\n            \"http://127.0.0.1:8000/category/2/\"\n        ],\n        \"price_after_discount\": 2938.4\n    },\n    {\n        \"id\": 2,\n        \"isbn\": \"978-1-348-46664-2\",\n        \"title\": \"Speak list manage. Work so scene range PM. Agent data wind though.\",\n        \"content\": \"Role describe position. Catch conference drop smile item. Professional could whose approach development personal knowledge.\\nTask or animal course rest ago election. Report deal case day management strategy.\\nClear it military paper factor second. Some reflect whom eight industry food film.\\nBeyond production beautiful particularly physical. Far support sometimes performance. Brother plant floor court check.\\nKnow give foreign. Foreign resource author thank want property.\\nAsk without within public. Suffer image certainly admit claim television institution. Blue vote such town.\\nMy save near. News reflect entire modern ability.\\nTo old parent hear game impact everything big. Next three religious page. Prevent stay important economy source.\\nPartner decade base once coach though miss. Minute ability however above generation truth high mean.\\nPretty international to TV responsibility it. Recent certain left available. Election game laugh continue.\",\n        \"price\": \"6924.00\",\n        \"authors\": [\n            1,\n            2\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 2769.6\n    },\n    {\n        \"id\": 3,\n        \"isbn\": \"978-0-9672049-2-5\",\n        \"title\": \"Prevent individual lead represent whatever.\",\n        \"content\": \"Indeed beat everybody available. Fall way fire of.\\nSuccess else data protect hour then someone day. Trouble free rich thank assume office. American matter message a door sell bring.\\nBest act response side two. Knowledge price least determine town build. Feel side successful key wear town method.\\nWear summer short military our especially. Past performance letter bed century you happen.\\nWant reveal determine arrive Republican.\\nHigh manager we front. Within get season behind song consider. Win interesting player baby more.\\nSell like difficult shoulder. Guess education run color successful. Stage we yourself American far above.\\nWithin story could message sound long get. Popular but phone door including green allow available. Wide listen kitchen get.\\nLittle agent thought discussion now blood push. Than catch base Congress. Either nearly future three life star style.\\nVarious raise once finally.\\nOrder evening movement firm or ten.\",\n        \"price\": \"4551.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 1820.4\n    },\n    {\n        \"id\": 4,\n        \"isbn\": \"978-1-264-21392-4\",\n        \"title\": \"Establish lose do from evidence population theory fast. Full could board up technology dog market.\",\n        \"content\": \"Seem article alone news onto me. Couple picture hotel build live instead learn. Instead his international later mention.\\nWindow officer design support. Decision determine program teach. Community daughter first service poor against prevent team.\\nMiddle million impact cup keep practice accept. Report federal specific particular music enough four. Month professional mind page institution director audience. Hotel radio student recognize live.\\nPower challenge seek might window. Today yes pull top president wide senior.\\nCapital reduce himself box air low. Blue beat various official night carry.\\nEight area example computer improve newspaper. Ball likely brother suddenly. Kitchen remember catch stop.\\nHome over role blood person. Everything husband probably expect spring five soldier. Must knowledge even institution while low. Mouth property option Democrat TV thousand.\\nFight energy research. House pull lay. Perhaps fly cut chair task.\",\n        \"price\": \"7010.00\",\n        \"authors\": [\n            1,\n            2\n        ],\n        \"categories\": [\n            \"http://127.0.0.1:8000/category/1/\"\n        ],\n        \"price_after_discount\": 2804\n    },\n    {\n        \"id\": 5,\n        \"isbn\": \"978-1-62010-463-7\",\n        \"title\": \"Happen end public moment. We heart appear large.\",\n        \"content\": \"Decision share method air but leave. Series social little face because choice.\\nPaper call us order. Well sea series myself.\\nCold at long peace race animal guess film.\\nSenior nothing right popular throw sport family. Base sometimes prepare hand deep.\\nClearly dark enough significant yourself provide. Bank beyond choice identify court.\\nCulture man shoulder but generation laugh various write. Leave attorney second who south deep agreement purpose.\\nStar forward political type somebody town. Energy mother one enough manager. Before wide past.\\nEvidence claim teach central blood she region. Difficult world open specific unit day suffer art. Follow interesting who fact end across.\\nBoard area discussion material evening. Miss where able require fish subject. Once yard century interest positive this network send.\\nSafe truth light hand business. Training phone gas option value law read take.\",\n        \"price\": \"7525.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 3010\n    },\n    {\n        \"id\": 6,\n        \"isbn\": \"978-1-340-98384-0\",\n        \"title\": \"Join discuss near interesting another consider. Democrat mission join administration this.\",\n        \"content\": \"Production our write there that. And human true over less have glass fine. Conference paper apply ball he window yeah resource.\\nAmerican focus job consumer main. Citizen big bank as difficult.\\nBody art put when. Sort image ask commercial poor special. Which beyond natural number.\\nBit bit sell or. Reach set few account two sea cause. Every amount wish together decade. Mother table by two foot fact final.\\nShoulder compare at big hear. Media deal look above there Democrat building. Attention view him next fear respond dog control. For event half.\\nGame teacher candidate voice person bed heart field. Upon rather top process evidence.\\nGeneration hit minute whatever staff oil radio offer. High role bank maybe data understand could. Improve explain bag truth mind tell seven option.\\nTeach wind process president. Organization unit carry operation. Customer tax eight science.\\nCut summer feel population base good generation.\",\n        \"price\": \"3459.00\",\n        \"authors\": [\n            2\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 1383.6\n    },\n    {\n        \"id\": 7,\n        \"isbn\": \"978-1-55451-601-8\",\n        \"title\": \"Upon to military off responsibility company talk military.\",\n        \"content\": \"Less school right. Learn everything would until. History two treat why ask.\\nPrevent catch reach single tree even practice. Forward simply ask property lay. Drop traditional gun professor.\\nBe yet certain young. Throw a left generation within their they. Author imagine market.\\nDespite leader leader perhaps your not. Article should high police. Strong what push hundred Democrat travel film.\\nLeader read box since question dinner quite. Area fly attorney reach his like media.\\nRight site exist fast several modern line. Road new last serve condition three language.\\nAdministration manager civil exactly attack be. Just card myself lead fish.\\nMight expect agency seven citizen. Oil wear language meeting.\\nEnough already environment owner. Of since face for. Money represent whole into price production able.\\nParty Republican because involve near feeling time. Control expect show. Professional avoid yard walk friend close hair.\\nEasy attorney bar movie. Quality practice like spring eat.\",\n        \"price\": \"1749.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 699.6\n    },\n    {\n        \"id\": 8,\n        \"isbn\": \"978-1-7356944-1-2\",\n        \"title\": \"Thought man work help choose program listen. Course hospital Congress despite throughout forward.\",\n        \"content\": \"Control authority various simply face work. Daughter arrive response light oil.\\nWrite work performance year. But admit theory beat matter behavior. Respond direction artist important push financial college.\\nEntire light capital tend about employee issue. Case sing end next person wall woman.\\nWestern energy beyond machine wall. To should dream.\\nSafe court person if explain accept particularly. Simple state sister oil why report method.\\nWrong have cause although and light wide. Feel across natural paper sound room. Them second low prepare thus image customer job.\\nPosition several degree great do different. Million what hour. Central century later. Minute note relate together.\\nEdge head land employee. Rise summer again artist.\\nToward page model focus up while. Exactly because nor any provide forward machine. Question understand strong relate. Human record although offer that resource.\\nFast travel provide energy more trial several you. Last too then form increase former.\",\n        \"price\": \"9268.00\",\n        \"authors\": [\n            1,\n            2\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 3707.2\n    },\n    {\n        \"id\": 9,\n        \"isbn\": \"978-0-07-491220-1\",\n        \"title\": \"Democrat man officer artist bad. New sell off sense. Task stand west.\",\n        \"content\": \"Practice dream human require. Suggest customer open financial agency.\\nRole five majority couple only not hard. Father best possible quickly early final.\\nGreen quickly individual present mention. Last force day food feeling.\\nHim word effect force democratic time. Me law day trouble computer prevent. Entire southern yet.\\nPainting rather nothing consumer clear leg specific.\\nTrue international company improve. My air military couple general. Role most spring nation around offer write.\\nHere market wall everybody book. Southern guy suffer.\\nStudent social prepare sort under great. Dream test say peace various treat special.\\nWithin put dog attorney best loss. Serve bad drive main poor. Military than tell understand model. Suddenly able today director that different rule.\\nPick require difference middle usually east performance. Wish system finally information care.\\nHit exist them pick event travel beautiful. Four window cell represent focus your trial. Radio the west one recently hospital.\",\n        \"price\": \"6095.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [\n            \"http://127.0.0.1:8000/category/2/\"\n        ],\n        \"price_after_discount\": 2438\n    },\n    {\n        \"id\": 10,\n        \"isbn\": \"978-0-05-676390-6\",\n        \"title\": \"International manage parent break whether beautiful example. Floor field against none indicate.\",\n        \"content\": \"Use represent hear start. Rate feel medical yes. Address teacher clear model including.\\nGreat stock federal start like speak because.\\nTeam politics conference have six quality cell. Return them sell prepare rise decade. Society her set ability against election evidence.\\nThroughout through trouble style sea. Country standard nation your book civil. Direction peace even war.\\nMeasure smile offer boy. Instead tend white bank either newspaper huge lose.\\nPart world ago modern present matter game. Particular let two hear strong into. Method art PM.\\nDaughter control program campaign. Focus eat field score. Economic pressure teach police guy bag difficult.\\nBeat teach weight effect decision although themselves. Too maybe picture among partner bag. Allow party bring similar Mrs yourself. Type himself mouth scene.\\nNight get serious. Point blood pattern dark make large. Member director someone sign campaign gas. Property he indeed allow write area.\",\n        \"price\": \"5953.00\",\n        \"authors\": [\n            1\n        ],\n        \"categories\": [],\n        \"price_after_discount\": 2381.2\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get book - No user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/books/8",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								"8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "E.g. 1 ( get book - no user)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/books/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"books",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Jul 2022 10:38:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1231"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"isbn\": \"978-1-4061-9242-1\",\n    \"title\": \"Energy carry different lot. Back room practice with.\",\n    \"content\": \"Suddenly various answer author.\\nAvoid physical half something computer. According need join everybody measure hand cost. None rock I sea.\\nThem fear join above property major.\\nListen Democrat prevent exactly property relationship exist. Message national dream phone event Democrat structure.\\nBuy nation center minute reality. Night recognize since.\\nYard military mind population treat. Return dream begin work enough.\\nRemember leader future answer where growth. Political usually collection social institution major under travel. Bed every door movement name similar action.\\nExpert bill police decade rather need indeed never. Region Mr garden since.\\nFall meeting way beyond. Issue compare kind mouth.\\nOk player team front. Discuss candidate thus degree his for game factor.\\nOur let campaign theory response project hear.\\nPractice start reach. Size attention game sure back modern. Ready prevent soldier capital employee laugh. World series life cultural though.\\nTalk learn space popular voice.\",\n    \"price\": \"7346.00\",\n    \"authors\": [\n        1,\n        2\n    ],\n    \"categories\": [\n        \"http://127.0.0.1:8000/category/2/\"\n    ],\n    \"price_after_discount\": 4407.6\n}"
+						}
+					]
+				},
+				{
+					"name": "Get book - With user",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var BASE_URL = pm.collectionVariables.get(\"BASE_URL\");",
+									"var USERNAME = \"farhad\"",
+									"var PASSWORD = \"hellopass\"",
+									"",
+									"",
+									"const echoPostRequest = {",
+									"  url: BASE_URL+'/accounts/login/',",
+									"  method: 'POST',",
+									"  header: 'Content-Type:application/json',",
+									"  body: {",
+									"    mode: 'application/json',",
+									"    raw: JSON.stringify(",
+									"        {",
+									"        \tusername:USERNAME,",
+									"        \tpassword:PASSWORD,",
+									"        })",
+									"  }",
+									"};",
+									"",
+									"",
+									"pm.sendRequest(echoPostRequest, function (err, res) {",
+									"console.log(err ? err : res.json());",
+									"    if (err === null) {",
+									"        var responseJson = res.json();",
+									"        pm.collectionVariables.set('USER_TOKEN', 'Token ' + responseJson.token);",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_TOKEN}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/books/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "E.g. 2 (get book - with user)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{USER_TOKEN}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/books/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"books",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Jul 2022 10:45:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1231"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"isbn\": \"978-1-4061-9242-1\",\n    \"title\": \"Energy carry different lot. Back room practice with.\",\n    \"content\": \"Suddenly various answer author.\\nAvoid physical half something computer. According need join everybody measure hand cost. None rock I sea.\\nThem fear join above property major.\\nListen Democrat prevent exactly property relationship exist. Message national dream phone event Democrat structure.\\nBuy nation center minute reality. Night recognize since.\\nYard military mind population treat. Return dream begin work enough.\\nRemember leader future answer where growth. Political usually collection social institution major under travel. Bed every door movement name similar action.\\nExpert bill police decade rather need indeed never. Region Mr garden since.\\nFall meeting way beyond. Issue compare kind mouth.\\nOk player team front. Discuss candidate thus degree his for game factor.\\nOur let campaign theory response project hear.\\nPractice start reach. Size attention game sure back modern. Ready prevent soldier capital employee laugh. World series life cultural though.\\nTalk learn space popular voice.\",\n    \"price\": \"7346.00\",\n    \"authors\": [\n        1,\n        2\n    ],\n    \"categories\": [\n        \"http://127.0.0.1:8000/category/2/\"\n    ],\n    \"price_after_discount\": 2938.4\n}"
+						}
+					]
+				},
+				{
+					"name": "Create new book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"python\",\n    \"content\": \"hello world from python\",\n    \"price\": 1000.001,\n    \"authors\": [8],\n    \"categories\": [3, 4]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/books/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "E.g. 1 (create new book - success)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isbn\": \"978-1-69698-378-7\",\n    \"title\": \"python\",\n    \"content\": \"hello world from python\",\n    \"price\": 1000,\n    \"authors\": [1],\n    \"categories\": [1, 2]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/books/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"books",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Jul 2022 10:21:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 11,\n    \"isbn\": \"978-1-69698-378-7\",\n    \"title\": \"python\",\n    \"content\": \"hello world from python\",\n    \"price\": \"1000.00\",\n    \"authors\": [\n        1\n    ],\n    \"categories\": [\n        1,\n        2\n    ]\n}"
+						},
+						{
+							"name": "E.g. 2 ( create new book - error)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"python\",\n    \"content\": \"hello world from python\",\n    \"price\": 1000.001,\n    \"authors\": [8],\n    \"categories\": [3, 4]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/books/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"books",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Jul 2022 10:24:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isbn\": [\n        \"This field is required.\"\n    ],\n    \"price\": [\n        \"Ensure that there are no more than 6 digits in total.\"\n    ],\n    \"authors\": [\n        \"Invalid pk \\\"8\\\" - object does not exist.\"\n    ],\n    \"categories\": [\n        \"Invalid pk \\\"3\\\" - object does not exist.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Replace book data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isbn\": \"555-1-69698-234-7\",\n    \"title\": \"javascript\",\n    \"content\": \"hello world from javascript\",\n    \"price\": 800,\n    \"authors\": [2],\n    \"categories\": [2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/books/11/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								"11",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "E.g. (replace book data)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isbn\": \"555-1-69698-234-7\",\n    \"title\": \"javascript\",\n    \"content\": \"hello world from javascript\",\n    \"price\": 800,\n    \"authors\": [2],\n    \"categories\": [2]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/books/11/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"books",
+										"11",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Jul 2022 10:33:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 11,\n    \"isbn\": \"555-1-69698-234-7\",\n    \"title\": \"javascript\",\n    \"content\": \"hello world from javascript\",\n    \"price\": \"800.00\",\n    \"authors\": [\n        2\n    ],\n    \"categories\": [\n        2\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit book data",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categories\": [1]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/books/11/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								"11",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "E.g (edit book data)",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"categories\": [1]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/books/11/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"books",
+										"11",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Jul 2022 10:36:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 11,\n    \"isbn\": \"555-1-69698-234-7\",\n    \"title\": \"javascript\",\n    \"content\": \"hello world from javascript\",\n    \"price\": \"800.00\",\n    \"authors\": [\n        2\n    ],\n    \"categories\": [\n        1\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		},
+		{
+			"key": "USER_TOKEN",
+			"value": ""
+		}
+	]
+}
