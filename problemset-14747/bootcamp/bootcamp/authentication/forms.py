@@ -1,3 +1,5 @@
+import re
+
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
@@ -52,12 +54,17 @@ def UniqueUsernameIgnoreCaseValidator(value):
         raise ValidationError('User with this Username already exists.')
 
 
+def QueraInUsernameValidator(value):
+    if 'quera' not in value.lower():
+        raise ValidationError('Username does not contain quera.')
+
+
 class SignUpForm(forms.ModelForm):
     username = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=30,
         required=True,
-        help_text='Usernames may contain <strong>alphanumeric</strong>, <strong>_</strong> and <strong>.</strong> characters')  # noqa: E501
+        help_text='Usernames may contain <strong>alphanumeric</strong>, <strong>_</strong> and <strong>.</strong> characters.<br> Usernames must contain the word "Quera"')  # noqa: E501
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     confirm_password = forms.CharField(
@@ -78,15 +85,31 @@ class SignUpForm(forms.ModelForm):
         super(SignUpForm, self).__init__(*args, **kwargs)
         self.fields['username'].validators.append(ForbiddenUsernamesValidator)
         self.fields['username'].validators.append(InvalidUsernameValidator)
-        self.fields['username'].validators.append(
-            UniqueUsernameIgnoreCaseValidator)
+        self.fields['username'].validators.append(UniqueUsernameIgnoreCaseValidator)
+        self.fields['username'].validators.append(QueraInUsernameValidator)
         self.fields['email'].validators.append(UniqueEmailValidator)
         self.fields['email'].validators.append(SignupDomainValidator)
+
+    def get_suggested_username(self, username):
+        regex = r"[^a-zA-Z0-9_\.]+"
+        suggested_username = re.sub(regex, '', username)
+        if 'quera' not in suggested_username:
+            suggested_username = 'quera_' + suggested_username
+        i = 1
+        while User.objects.filter(username=suggested_username).exists():
+            suggested_username = re.sub(r"_$|_+\d$", "", suggested_username)
+            suggested_username = suggested_username + '_' + str(i)
+            i += 1
+        return suggested_username
 
     def clean(self):
         super(SignUpForm, self).clean()
         password = self.cleaned_data.get('password')
         confirm_password = self.cleaned_data.get('confirm_password')
+        username_has_error = self.errors.get('username')
+        if username_has_error and username_has_error[0] != 'This field is required.':
+            suggested_username = self.get_suggested_username(self.data.get('username'))
+            self._errors['username'] = self._errors['username'] + self.error_class(['Suggest: *{}*'.format(suggested_username)])
         if password and password != confirm_password:
             self._errors['password'] = self.error_class(
                 ['Passwords don\'t match'])
