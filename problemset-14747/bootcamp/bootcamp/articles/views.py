@@ -60,7 +60,7 @@ def articles(request):
 
 @login_required
 def article(request, slug):
-    article = get_object_or_404(Article, slug=slug, status=Article.PUBLISHED)
+    article = get_object_or_404(Article,  status=Article.PUBLISHED)
     return render(request, 'articles/article.html', {'article': article})
 
 
