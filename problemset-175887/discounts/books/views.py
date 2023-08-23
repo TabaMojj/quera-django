@@ -1,11 +1,13 @@
 from rest_framework.viewsets import ModelViewSet
 
 from .models import Book, Category
-from .serializers import CategorySerializer
+from .serializers import CategorySerializer, BookSerializer
 
 
 class BookViewSet(ModelViewSet):
-    pass
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    lookup_field = 'pk'
 
 
 class CategoryViewSet(ModelViewSet):
