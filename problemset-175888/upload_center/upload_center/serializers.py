@@ -1,5 +1,6 @@
 import os
 import uuid
+from _decimal import Decimal
 from pathlib import Path
 
 from django.conf import settings
@@ -7,18 +8,20 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from django.core.files.storage import default_storage
 from rest_framework.exceptions import ValidationError
+import decimal
 
 User = get_user_model()
 
 
-def get_megabytes(value):
+def get_megabytes(value): #TODO: WRITE ABOUT THIS IN README
     megabytes = value / (1024 * 1024)
-    return round(megabytes, 3)
+    value = f'{megabytes:.3f}'
+    return value
 
 
 def printknapSack(user_available_storage, files):
     chosen_files = []
-    user_available_storage = int(get_megabytes(user_available_storage))
+    user_available_storage = int(float(get_megabytes(user_available_storage)))
     n = len(files)
     val = [1] * n
     K = [[0 for w in range(user_available_storage + 1)]
@@ -27,9 +30,9 @@ def printknapSack(user_available_storage, files):
         for w in range(user_available_storage + 1):
             if i == 0 or w == 0:
                 K[i][w] = 0
-            elif get_megabytes(files[i - 1].size) <= w:
+            elif int(float(get_megabytes(files[i - 1].size))) <= w:
                 K[i][w] = max(val[i - 1]
-                              + K[i - 1][w - int(get_megabytes(files[i - 1].size))],
+                              + K[i - 1][w - int(float(get_megabytes(files[i - 1].size)))],
                               K[i - 1][w])
             else:
                 K[i][w] = K[i - 1][w]
@@ -43,24 +46,19 @@ def printknapSack(user_available_storage, files):
         else:
             chosen_files.append(files[i - 1])
             res = res - val[i - 1]
-            w = w - int(get_megabytes(files[i - 1].size))
+            w = w - int(float(get_megabytes(files[i - 1].size)))
     return chosen_files
 
 
-# class MultipleFileField(serializers.FileField):
-#     def to_internal_value(self, data):
-#         files = []
-#         for f in data:
-#             files.append(super().to_internal_value(f))
-#         return files
+
 
 
 class UploadFilesSerializer(serializers.Serializer):
-    file_field = serializers.FileField(use_url=False, allow_empty_file=False, allow_null=False)
-
-    # file_field = serializers.ListField(
-    #     child=serializers.FileField(use_url=False, allow_empty_file=False, allow_null=False),
-    #     allow_null=False, allow_empty=False)
+    # file_field = serializers.FileField(allow_empty_file=False, required=True, use_url=False)
+    #
+    file_field = serializers.ListField(
+        child=serializers.FileField(use_url=False, allow_empty_file=False, allow_null=False),
+        allow_null=False, allow_empty=False)
 
     # def create(self, validated_data):
     #     user = self.context['user']
