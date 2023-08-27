@@ -5,16 +5,26 @@ from django.core.files.storage import default_storage
 User = get_user_model()
 
 
-def get_megabytes(value):  # TODO: WRITE ABOUT THIS IN README
+def get_megabytes(value):
     megabytes = value / (1024 * 1024)
     value = f'{megabytes:.3f}'
     return value
 
 
 class UploadFilesSerializer(serializers.Serializer):
-    file_field = serializers.ListField(
-        child=serializers.FileField(allow_empty_file=False, allow_null=False),
-        allow_null=False, allow_empty=False)
+    file_field = serializers.FileField(allow_empty_file=False, allow_null=False)
+
+    # file_field = serializers.ListField(
+    #     child=serializers.FileField(allow_empty_file=False, allow_null=False),
+    #     allow_null=False, allow_empty=False)
+
+    def validate(self, attrs):
+        super().validate(attrs)
+        attrs = self.initial_data.getlist('file_field')
+        for file in attrs:
+            if file.size == 0:
+                raise serializers.ValidationError('Empty File')
+        return self.initial_data.getlist('file_field')
 
 
 class UserSerializer(serializers.ModelSerializer):
